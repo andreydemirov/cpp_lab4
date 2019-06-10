@@ -1,12 +1,28 @@
-﻿// cpp_lab4.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+// cpp_lab4.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 
-#include "pch.h"
+#include <string>
 #include <iostream>
+#include "pch.h"
+
+using namespace std;
+
 
 int main()
 {
-    std::cout << "Hello World!\n"; 
+	string a;
+	getline(cin, a);
+	
+	string b;
+	b += a[0];
+	
+	for (int i = 1; i < a.length(); i++)
+	{
+		if ((a[i] != ' ') || ((a[i] == ' ') and (a[i - 1] != ' '))) b += a[i];
+	}
+
+	cout << b;
+	return 0;
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
